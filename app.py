@@ -121,7 +121,7 @@ def AdminPage():
     
     #create an admin account if one doesn't exist
 	if not Admin.query.first():
-		randompassword = ''.join(random.choices(string.ascii_letters + string.digits, k=24))
+		randompassword = "1234567890"
 		newAdmin = Admin(username="admin", password=bcrypt.generate_password_hash(randompassword).decode('utf-8'), rank=0)
 		db.session.add(newAdmin)
 		db.session.commit()
